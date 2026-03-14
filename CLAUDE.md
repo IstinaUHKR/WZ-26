@@ -45,19 +45,19 @@ WZ-26/project/
 - **Fact-Checker** — 回到 PDF 原文逐句比对，验证引用准确性
 - 最多 3 轮对抗迭代；若文献全被打掉则触发补充检索
 
-## 关键路径（本机）
+## 关键路径（按本机环境修改）
 
-- **Zotero 数据库：** `D:\PTU\LibUHKR\zotero.sqlite`
+- **Zotero 数据库：** `<YOUR_ZOTERO_DATA_DIR>/zotero.sqlite`
 - **Zotero MCP 插件：** cookjohn/zotero-mcp，端口 23120（需在 Zotero UI 中启用）
-- **gpt-researcher 参考：** `D:\PTU\gptresearcher\gpt-researcher\`（参考 multi_agents/ 架构）
-- **Claude Code 技能目录：** `C:\Users\lenovo\.agents\skills\`
+- **Claude Code 技能目录：** `<YOUR_HOME>/.claude/skills/` 或 `<YOUR_HOME>/.agents/skills/`
 
 ## 启动前检查
 
 1. Zotero Desktop 运行中，MCP 服务器已启用（端口 23120）
 2. 当前会话 Tavily MCP 工具可用（tavily_search / extract / research）
-3. Python 环境：`C:\ProgramData\anaconda3\python`
-4. **每次对话开头读 TODO.md**
+3. Python 环境已安装依赖：`pip install -r requirements.txt`
+4. 项目根目录存在 `.mcp.json`（参考 `.mcp.json.example`）
+5. **每次对话开头读 TODO.md**
 
 ## 检索策略
 
