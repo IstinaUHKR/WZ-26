@@ -3,8 +3,7 @@
 verify_citations.py - 报告溯源核查（防幻觉核心）
 
 功能：
-- 解析报告中所有 [Z:], [A:], [W:], [L:] 锚点
-- Zotero: sqlite3 直接查本地数据库（离线可用）
+- 解析报告中所有 [A:], [W:], [L:] 锚点（[Z:] 锚点可选，需传入 --zotero-db）
 - DOI: Semantic Scholar API 确认
 - URL: HTTP HEAD 请求
 - Local: Path.exists() 确认文件存在
@@ -15,7 +14,7 @@ verify_citations.py - 报告溯源核查（防幻觉核心）
 
 用法：
   python verify_citations.py --report reports/my_report.md
-  python verify_citations.py --report reports/my_report.md --zotero-db "D:/PTU/LibUHKR/zotero.sqlite"
+  python verify_citations.py --report reports/my_report.md --zotero-db "/path/to/zotero.sqlite"
 """
 
 import argparse
@@ -33,8 +32,8 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="repla
 
 import requests
 
-# Zotero 数据库默认路径
-DEFAULT_ZOTERO_DB = r"D:\PTU\LibUHKR\zotero.sqlite"
+# Zotero 数据库默认路径（可选，通过 --zotero-db 参数传入）
+DEFAULT_ZOTERO_DB = None
 
 # 锚点正则
 RE_ZOTERO = re.compile(r'\[Z:\s*([^\|]+?)\s*\|\s*([^\]]+?)\]')

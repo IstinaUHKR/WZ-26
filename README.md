@@ -81,13 +81,16 @@ project/
 ## 依赖
 
 - **Claude Code** — 运行环境
-- **Zotero Desktop** + [zotero-mcp](https://github.com/cookjohn/zotero-mcp) 插件（端口 23120）
 - **Tavily MCP** — 全网检索
 - **Python 3.12+** — `requests`, `pdfplumber`（Anaconda 环境）
 
 ```bash
-pip install requests pdfplumber
+pip install -r requirements.txt
 ```
+
+### 可选：Zotero 集成
+
+如果你有本地 Zotero 文献库，可以安装 [zotero-mcp](https://github.com/cookjohn/zotero-mcp) 插件（端口 23120），并配置 `.mcp.json`。`verify_citations.py` 支持通过 `--zotero-db` 参数核查 `[Z:]` 锚点，但不强制要求。
 
 ## 使用
 
@@ -103,20 +106,8 @@ pip install requests pdfplumber
 
 克隆到本地后需要：
 
-1. 安装并启用 Zotero MCP 插件（Zotero → 编辑 → 首选项 → Zotero MCP Plugin → Enable Server）
-2. 在项目根目录创建 `.mcp.json`（不纳入版本控制）：
-   ```json
-   {
-     "mcpServers": {
-       "zotero": {
-         "type": "streamable-http",
-         "url": "http://localhost:23120/mcp"
-       }
-     }
-   }
-   ```
-3. 配置 Tavily MCP（参考 `~/.claude.json`）
-4. 将 `skill/` 软链接到 Claude Code Skills 目录
+1. 配置 Tavily MCP（参考 `~/.claude.json`）
+2. 将 `skill/` 软链接到 Claude Code Skills 目录
 
 ## 已知限制
 

@@ -40,7 +40,6 @@ tools:
    - 评估声明是否被锚点来源支撑：
      - `[A:]` / `[L:]` 锚点：阅读对应的本地 PDF 文件（在 acquired.json 的 papers 中找 local_path）
      - `[W:]` 锚点：读取 `workspace/web_cache/` 中对应的快照 JSON 文件（在 acquired.json 的 web_sources 中找 cache_file），检查 content 字段是否支撑声明
-     - `[Z:]` 锚点：阅读 acquired.json 中 Zotero 条目的摘要或本地文件
    - 检查是否存在夸大或曲解
 4. 对无锚点的事实性声明标记为 unsupported
 

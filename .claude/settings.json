@@ -11,7 +11,6 @@
     "Agent",
     "NotebookEdit",
     "Skill",
-    "mcp__zotero__*",
     "mcp__tavily__*"
   ],
   "notes": "本项目工作目录：D:/PTU/WZ-26/project/ - 深度检索工具链"

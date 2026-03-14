@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "zotero": {
-      "type": "streamable-http",
-      "url": "http://localhost:23120/mcp"
+    "tavily": {
+      "type": "http",
+      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey=<YOUR_TAVILY_API_KEY>"
     }
   }
 }
