@@ -1,0 +1,31 @@
+# 临时工作区（运行时生成，不纳入版本控制）
+workspace/papers/
+workspace/web_cache/
+workspace/*.json
+workspace/*.md
+workspace/*.txt
+
+# 报告输出（个人研究成果，按需决定是否上传）
+reports/
+
+# 本机配置（含端口、路径等本地信息）
+.mcp.json
+.claude/settings.local.json
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
